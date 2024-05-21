@@ -16,6 +16,9 @@
 		6D9E05652BFC8819006E2E5A /* MyZoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E05642BFC8819006E2E5A /* MyZoneTests.swift */; };
 		6D9E056F2BFC8819006E2E5A /* MyZoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E056E2BFC8819006E2E5A /* MyZoneUITests.swift */; };
 		6D9E05712BFC8819006E2E5A /* MyZoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E05702BFC8819006E2E5A /* MyZoneUITestsLaunchTests.swift */; };
+		6D9E057E2BFC8AC1006E2E5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D9E057D2BFC8AC1006E2E5A /* GoogleService-Info.plist */; };
+		6D9E057F2BFC8AC1006E2E5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D9E057D2BFC8AC1006E2E5A /* GoogleService-Info.plist */; };
+		6D9E05802BFC8AC1006E2E5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D9E057D2BFC8AC1006E2E5A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 		6D9E056A2BFC8819006E2E5A /* MyZoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyZoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D9E056E2BFC8819006E2E5A /* MyZoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZoneUITests.swift; sourceTree = "<group>"; };
 		6D9E05702BFC8819006E2E5A /* MyZoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyZoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6D9E057D2BFC8AC1006E2E5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				6D9E05562BFC8819006E2E5A /* Assets.xcassets */,
 				6D9E05582BFC8819006E2E5A /* LaunchScreen.storyboard */,
 				6D9E055B2BFC8819006E2E5A /* Info.plist */,
+				6D9E057D2BFC8AC1006E2E5A /* GoogleService-Info.plist */,
 			);
 			path = MyZone;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D9E05572BFC8819006E2E5A /* Assets.xcassets in Resources */,
+				6D9E057E2BFC8AC1006E2E5A /* GoogleService-Info.plist in Resources */,
 				6D9E055A2BFC8819006E2E5A /* Base in Resources */,
 				6D9E05552BFC8818006E2E5A /* Base in Resources */,
 			);
@@ -241,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D9E057F2BFC8AC1006E2E5A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D9E05802BFC8AC1006E2E5A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
