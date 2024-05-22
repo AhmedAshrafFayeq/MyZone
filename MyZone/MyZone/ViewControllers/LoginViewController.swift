@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-import FirebaseFirestore
 
 class LoginViewController: UIViewController {
 
@@ -18,7 +17,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupElements()
     }
     
@@ -57,7 +55,7 @@ class LoginViewController: UIViewController {
                             if !isAdmin {
                                 transitionToZonesVC()
                             } else {
-                                
+                                transitionToDashboardVC()
                             }
                             return
                         }
@@ -72,15 +70,18 @@ class LoginViewController: UIViewController {
     @IBAction func didTapLogin(_ sender: Any) {
         let username = usernamTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
         checkCredentials(username: username, password: password)
     }
     
     func transitionToZonesVC() {
         let zonesVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.zonesViewController) as? ZonesViewController
-        
+        navigationController?.setNavigationBarHidden(false, animated: false)
         view?.window?.rootViewController = zonesVC
         view.window?.makeKeyAndVisible()
+    }
+    
+    func transitionToDashboardVC() {
+        //TODO: - Add Admin dashboard VC
     }
     
 }

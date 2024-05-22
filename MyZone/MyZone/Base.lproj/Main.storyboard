@@ -81,20 +81,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zones" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYI-uN-4ZN">
-                                <rect key="frame" x="167.33333333333334" y="414" width="58.333333333333343" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Areas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZ8-t6-ubw">
+                                <rect key="frame" x="40" y="99" width="313" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YgU-NS-ifZ">
+                                <rect key="frame" x="20" y="163" width="353" height="635"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7kM-V7-3gQ" id="hZH-4G-5hF"/>
+                                    <outlet property="delegate" destination="7kM-V7-3gQ" id="Ys8-pU-jyW"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cci-aB-6so"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="RYI-uN-4ZN" firstAttribute="centerX" secondItem="wrl-3Y-FyJ" secondAttribute="centerX" id="2se-9q-R3M"/>
-                            <constraint firstItem="RYI-uN-4ZN" firstAttribute="centerY" secondItem="wrl-3Y-FyJ" secondAttribute="centerY" id="aYK-AZ-YtS"/>
+                            <constraint firstItem="YgU-NS-ifZ" firstAttribute="leading" secondItem="cci-aB-6so" secondAttribute="leading" constant="20" id="1AD-CY-ysI"/>
+                            <constraint firstItem="cci-aB-6so" firstAttribute="bottom" secondItem="YgU-NS-ifZ" secondAttribute="bottom" constant="20" id="8FI-82-wmR"/>
+                            <constraint firstItem="YgU-NS-ifZ" firstAttribute="top" secondItem="KZ8-t6-ubw" secondAttribute="bottom" constant="40" id="H4g-m4-Jqp"/>
+                            <constraint firstItem="cci-aB-6so" firstAttribute="trailing" secondItem="YgU-NS-ifZ" secondAttribute="trailing" constant="20" id="NYn-Y0-EQI"/>
+                            <constraint firstItem="cci-aB-6so" firstAttribute="trailing" secondItem="KZ8-t6-ubw" secondAttribute="trailing" constant="40" id="gTo-2z-7xp"/>
+                            <constraint firstItem="KZ8-t6-ubw" firstAttribute="leading" secondItem="cci-aB-6so" secondAttribute="leading" constant="40" id="uNi-H7-ATx"/>
+                            <constraint firstItem="KZ8-t6-ubw" firstAttribute="top" secondItem="cci-aB-6so" secondAttribute="top" constant="40" id="wG1-HE-d9G"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="zonesTableView" destination="YgU-NS-ifZ" id="UkZ-2t-CK3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxF-gh-xOp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
