@@ -90,6 +90,33 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YgU-NS-ifZ">
                                 <rect key="frame" x="20" y="163" width="353" height="635"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="125" id="EC7-20-dM8" customClass="ZonesTableViewCell" customModule="MyZone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="353" height="125"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EC7-20-dM8" id="aGx-Wo-zt8">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyt-ns-5Q6">
+                                                    <rect key="frame" x="40" y="12" width="273" height="101"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Zyt-ns-5Q6" firstAttribute="leading" secondItem="aGx-Wo-zt8" secondAttribute="leadingMargin" constant="20" id="Jb8-eZ-pmE"/>
+                                                <constraint firstItem="Zyt-ns-5Q6" firstAttribute="top" secondItem="aGx-Wo-zt8" secondAttribute="topMargin" id="Ts3-lh-Cfa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Zyt-ns-5Q6" secondAttribute="trailing" constant="20" id="UPm-N6-cby"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Zyt-ns-5Q6" secondAttribute="bottom" id="wcD-F1-0cL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="zoneNameLabel" destination="Zyt-ns-5Q6" id="d7g-Fg-rGN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="7kM-V7-3gQ" id="hZH-4G-5hF"/>
                                     <outlet property="delegate" destination="7kM-V7-3gQ" id="Ys8-pU-jyW"/>
@@ -114,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxF-gh-xOp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="13"/>
+            <point key="canvasLocation" x="1872.5190839694656" y="12.67605633802817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9cw-Mu-Bgb">

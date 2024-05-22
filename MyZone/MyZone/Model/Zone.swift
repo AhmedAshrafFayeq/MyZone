@@ -9,5 +9,5 @@ import Foundation
 
 struct Zone {
     let name: String
-    let code: Int
+    let code: String
 }

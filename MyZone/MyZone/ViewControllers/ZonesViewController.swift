@@ -20,10 +20,6 @@ class ZonesViewController: UIViewController {
         fetchZonesFromFirebase()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func fetchZonesFromFirebase() {
         let db = Firestore.firestore()
         let collectionRef = db.collection("zones")
@@ -34,15 +30,35 @@ class ZonesViewController: UIViewController {
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
-                    if let name = data["name"] as? String, let code = data["code"] as? Int {
+                    if let name = data["name"] as? String, let code = data["code"] as? String {
                         listOfZones.append(Zone(name: name, code: code))
                     }
                 }
-                // If no match found
-                print("Invalid username or password.")
+                zonesTableView.reloadData()
             }
         }
     }
 }
 
-class 
+
+//MARK: - TableView delegate & data source methods
+extension ZonesViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        "NMA Municipal Boundry"
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        listOfZones.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ZonesTableViewCell
+        cell.zoneNameLabel.text = "Zone - \(indexPath.row) - \(listOfZones[indexPath.row].name)"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
+    }
+}
