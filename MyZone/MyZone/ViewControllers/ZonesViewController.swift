@@ -17,6 +17,12 @@ class ZonesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        title = "Areas"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         fetchZonesFromFirebase()
     }
     
@@ -54,11 +60,17 @@ extension ZonesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ZonesTableViewCell
-        cell.zoneNameLabel.text = "Zone - \(indexPath.row) - \(listOfZones[indexPath.row].name)"
+        cell.zoneNameLabel.text = "Zone - \(indexPath.row + 1) - \(listOfZones[indexPath.row].name)"
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let newViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.zonesCodeViewController) as? ZoneCodeBottomSheetViewController {
+            self.navigationController?.pushViewController(newViewController, animated: true)
+        }
     }
 }
