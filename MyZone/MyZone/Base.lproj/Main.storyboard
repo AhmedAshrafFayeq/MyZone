@@ -35,7 +35,7 @@
                                             <constraint firstAttribute="height" constant="50" id="0PA-TM-Tt8"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="login"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                         <connections>
                                             <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uXS-VZ-lu5"/>
                                         </connections>
@@ -231,7 +231,7 @@
                                             <constraint firstAttribute="height" constant="50" id="o8h-Qw-lKn"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="login"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Submit"/>
                                         <connections>
                                             <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vDK-H6-dEN"/>
                                         </connections>
@@ -260,6 +260,14 @@
                             <constraint firstItem="s3y-qo-rPQ" firstAttribute="trailing" secondItem="M65-Hy-PeQ" secondAttribute="trailing" constant="40" id="aWt-Tr-IiU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="commentTextField" destination="Zix-ZC-Tpu" id="FUG-eA-vmD"/>
+                        <outlet property="equipmentTextField" destination="q8B-ZN-Lfh" id="Ka0-nN-bk7"/>
+                        <outlet property="errorLabel" destination="H3D-HX-Hcb" id="QKA-cc-GEY"/>
+                        <outlet property="loginButton" destination="LEd-dM-oPa" id="Y3N-Ui-2gF"/>
+                        <outlet property="manPowerTextField" destination="yir-yx-dpI" id="BvJ-Z6-2bK"/>
+                        <outlet property="supervisorTextField" destination="z4Q-Sq-nKL" id="xr4-NL-maM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkf-FS-nO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

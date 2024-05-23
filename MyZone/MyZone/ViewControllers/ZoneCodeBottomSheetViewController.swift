@@ -44,20 +44,23 @@ class ZoneCodeBottomSheetViewController: UIViewController {
         checkCodeValdiation()
     }
     
+    
     func checkCodeValdiation() {
         print(code)
         print(codeTextField.text)
         if code == codeTextField.text {
             transitionToZoneDetailsVC()
+        } else {
+            showError(message: "code error")
         }
     }
     
-     // MARK: - Helper Methods
-     
-     func showError(message: String) {
-         errorLabel.alpha = 1
-         errorLabel.text = message
-     }
+    // MARK: - Helper Methods
+    
+    func showError(message: String) {
+        errorLabel.alpha = 1
+        errorLabel.text = message
+    }
     
     
     func transitionToZoneDetailsVC() {
@@ -65,4 +68,6 @@ class ZoneCodeBottomSheetViewController: UIViewController {
             self.navigationController?.pushViewController(newViewController, animated: true)
         }
     }
+    
+    
 }
