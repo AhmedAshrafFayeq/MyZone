@@ -69,8 +69,10 @@ extension ZonesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let newViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.zonesCodeViewController) as? ZoneCodeBottomSheetViewController {
-            self.navigationController?.pushViewController(newViewController, animated: true)
+        if let zoneCodeVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.zonesCodeViewController) as? ZoneCodeBottomSheetViewController {
+            zoneCodeVC.code = listOfZones[indexPath.row].code
+            print(zoneCodeVC.code)
+            self.navigationController?.pushViewController(zoneCodeVC, animated: true)
         }
     }
 }

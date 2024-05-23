@@ -88,7 +88,6 @@ class LoginViewController: UIViewController {
     }
     
     func transitionToZonesVC() {
-        
         if let newViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.zonesViewController) as? ZonesViewController {
             self.navigationController?.pushViewController(newViewController, animated: true)
         }

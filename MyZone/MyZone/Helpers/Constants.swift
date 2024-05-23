@@ -13,6 +13,7 @@ struct Constants {
         
         static let zonesViewController = "ZonesVC"
         static let zonesCodeViewController = "ZoneCodeVC"
+        static let zonesDetailsViewController = "ZoneDetailsVC"
         
     }
 }
