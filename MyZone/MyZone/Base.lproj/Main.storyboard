@@ -52,12 +52,21 @@
                                     <constraint firstItem="tRL-6Q-gox" firstAttribute="height" secondItem="mJi-oR-OaT" secondAttribute="height" id="tFF-yj-M7j"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="KaF-N2-xe9">
+                                <rect key="frame" x="181.66666666666666" y="411" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gtJ-UR-2TH"/>
+                                    <constraint firstAttribute="width" constant="30" id="yFQ-ba-sZ8"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="KaF-N2-xe9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7nG-T7-fH5"/>
                             <constraint firstItem="6TN-V5-w16" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-50" id="IOy-AF-Esj"/>
                             <constraint firstItem="6TN-V5-w16" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="PSZ-3k-b9n"/>
+                            <constraint firstItem="KaF-N2-xe9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vuc-4p-fIH"/>
                             <constraint firstItem="6TN-V5-w16" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="X5b-Tc-W6I"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6TN-V5-w16" secondAttribute="trailing" constant="40" id="hrd-cp-gj7"/>
                         </constraints>
@@ -65,6 +74,7 @@
                     <navigationItem key="navigationItem" id="8sF-TZ-xcZ"/>
                     <connections>
                         <outlet property="errorLabel" destination="dth-9O-G18" id="XvU-wG-znS"/>
+                        <outlet property="loadingIndicator" destination="KaF-N2-xe9" id="xMa-qZ-cC4"/>
                         <outlet property="loginButton" destination="klK-cG-l6z" id="pn5-0u-S3o"/>
                         <outlet property="passwordTextField" destination="tRL-6Q-gox" id="A9g-m2-hga"/>
                         <outlet property="usernamTextField" destination="mJi-oR-OaT" id="UU9-v8-bpZ"/>
@@ -174,6 +184,13 @@
                                     <constraint firstItem="PQl-f5-HkK" firstAttribute="height" secondItem="liw-dO-8RV" secondAttribute="height" id="A6P-jM-0UK"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Bli-gk-XRm">
+                                <rect key="frame" x="181.66666666666666" y="411" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="D9J-oh-OB2"/>
+                                    <constraint firstAttribute="height" constant="30" id="W8x-0S-5m5"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KGD-LD-syd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -181,12 +198,15 @@
                             <constraint firstItem="ZQk-V8-Rqq" firstAttribute="centerX" secondItem="KGD-LD-syd" secondAttribute="centerX" id="4fS-gq-66U"/>
                             <constraint firstItem="ZQk-V8-Rqq" firstAttribute="centerY" secondItem="KGD-LD-syd" secondAttribute="centerY" constant="-50" id="5fw-NN-H8Z"/>
                             <constraint firstItem="ZQk-V8-Rqq" firstAttribute="leading" secondItem="KGD-LD-syd" secondAttribute="leading" constant="40" id="EU6-NO-l6L"/>
+                            <constraint firstItem="Bli-gk-XRm" firstAttribute="centerX" secondItem="T4f-kl-1W9" secondAttribute="centerX" id="OSj-Zh-ap8"/>
+                            <constraint firstItem="Bli-gk-XRm" firstAttribute="centerY" secondItem="T4f-kl-1W9" secondAttribute="centerY" id="P6q-dx-2O1"/>
                             <constraint firstItem="KGD-LD-syd" firstAttribute="trailing" secondItem="ZQk-V8-Rqq" secondAttribute="trailing" constant="40" id="mdU-9o-GYe"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="codeTextField" destination="liw-dO-8RV" id="hWj-jk-auD"/>
                         <outlet property="errorLabel" destination="5DG-dy-pAz" id="Hid-ZU-Xmz"/>
+                        <outlet property="loadingIndicator" destination="Bli-gk-XRm" id="63i-ET-VMJ"/>
                         <outlet property="submitButton" destination="PQl-f5-HkK" id="PQ1-gk-0he"/>
                     </connections>
                 </viewController>
@@ -234,6 +254,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Submit"/>
                                         <connections>
                                             <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vDK-H6-dEN"/>
+                                            <action selector="didTapSubmit:" destination="aVA-rj-wQ8" eventType="touchUpInside" id="Gl1-zR-lKk"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3D-HX-Hcb">
@@ -250,20 +271,30 @@
                                     <constraint firstItem="z4Q-Sq-nKL" firstAttribute="height" secondItem="LEd-dM-oPa" secondAttribute="height" id="zZU-mP-jcr"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="cDe-2y-3Ml">
+                                <rect key="frame" x="181.66666666666666" y="411" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="5zQ-Jt-Rev"/>
+                                    <constraint firstAttribute="height" constant="30" id="84P-wN-vGw"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s3y-qo-rPQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="M65-Hy-PeQ" firstAttribute="leading" secondItem="s3y-qo-rPQ" secondAttribute="leading" constant="40" id="2sY-KH-0pF"/>
+                            <constraint firstItem="cDe-2y-3Ml" firstAttribute="centerY" secondItem="KBQ-8m-fBv" secondAttribute="centerY" id="5uT-3h-e6d"/>
                             <constraint firstItem="M65-Hy-PeQ" firstAttribute="centerY" secondItem="KBQ-8m-fBv" secondAttribute="centerY" constant="-50" id="I9N-lx-h55"/>
                             <constraint firstItem="M65-Hy-PeQ" firstAttribute="centerX" secondItem="KBQ-8m-fBv" secondAttribute="centerX" id="OUG-Oj-6Ep"/>
                             <constraint firstItem="s3y-qo-rPQ" firstAttribute="trailing" secondItem="M65-Hy-PeQ" secondAttribute="trailing" constant="40" id="aWt-Tr-IiU"/>
+                            <constraint firstItem="cDe-2y-3Ml" firstAttribute="centerX" secondItem="KBQ-8m-fBv" secondAttribute="centerX" id="zU8-DA-SwN"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="commentTextField" destination="Zix-ZC-Tpu" id="FUG-eA-vmD"/>
                         <outlet property="equipmentTextField" destination="q8B-ZN-Lfh" id="Ka0-nN-bk7"/>
                         <outlet property="errorLabel" destination="H3D-HX-Hcb" id="QKA-cc-GEY"/>
+                        <outlet property="loadingIndicator" destination="cDe-2y-3Ml" id="91O-cY-JGO"/>
                         <outlet property="loginButton" destination="LEd-dM-oPa" id="Y3N-Ui-2gF"/>
                         <outlet property="manPowerTextField" destination="yir-yx-dpI" id="BvJ-Z6-2bK"/>
                         <outlet property="supervisorTextField" destination="z4Q-Sq-nKL" id="xr4-NL-maM"/>
