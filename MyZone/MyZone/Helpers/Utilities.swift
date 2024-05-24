@@ -51,4 +51,18 @@ class Utilities {
         return passwordTest.evaluate(with: password)
     }
     
+    static func convertObjectToDictionary<T>(object: T) -> [String: Any] {
+        let mirror = Mirror(reflecting: object)
+        var dictionary = [String: Any]()
+        
+        for (key, value) in mirror.children {
+            guard let key = key else {
+                continue
+            }
+            dictionary[key] = value
+        }
+        
+        return dictionary
+    }
+    
 }
