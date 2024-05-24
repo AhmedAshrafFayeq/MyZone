@@ -72,6 +72,8 @@ extension ZonesViewController: UITableViewDelegate, UITableViewDataSource {
         if let zoneCodeVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.zonesCodeViewController) as? ZoneCodeBottomSheetViewController {
             zoneCodeVC.code = listOfZones[indexPath.row].code
             print(zoneCodeVC.code)
+            UserDefaults.standard.set(listOfZones[
+                indexPath.row].name, forKey: "zoneName")
             self.navigationController?.pushViewController(zoneCodeVC, animated: true)
         }
     }
