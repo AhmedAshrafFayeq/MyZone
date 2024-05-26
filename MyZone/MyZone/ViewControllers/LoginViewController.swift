@@ -115,6 +115,10 @@ class LoginViewController: UIViewController {
     
     func transitionToDashboardVC() {
         //TODO: - Add Admin dashboard VC
+        
+        if let dashboardVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.dashboardViewController) as? DashboardViewController {
+            self.navigationController?.pushViewController(dashboardVC, animated: true)
+        }
     }
     
     // MARK: - Helper Methods
