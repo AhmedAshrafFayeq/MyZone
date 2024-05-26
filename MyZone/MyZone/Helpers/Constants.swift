@@ -12,6 +12,7 @@ struct Constants {
     struct Storyboard {
         
         static let zonesViewController = "ZonesVC"
+        static let dashboardViewController = "dashboardVC"
         static let zonesCodeViewController = "ZoneCodeVC"
         static let zonesDetailsViewController = "ZoneDetailsVC"
         

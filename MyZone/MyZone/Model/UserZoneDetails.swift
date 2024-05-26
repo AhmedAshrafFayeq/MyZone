@@ -14,5 +14,5 @@ struct UserZoneDetails {
     let equipment: String
     let supervisorName: String
     let comment: String
-    let date: Date
+    let date: String
 }

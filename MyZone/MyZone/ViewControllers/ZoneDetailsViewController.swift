@@ -69,7 +69,7 @@ class ZoneDetailsViewController: UIViewController {
                 let equipment = equipmentTextField.text ?? ""
                 let supervisor = supervisorTextField.text ?? ""
                 let comment = commentTextField.text ?? ""
-                let myZoneDetails = UserZoneDetails(username: username, selectedZone: zoneName, manPower: manPower, equipment: equipment, supervisorName: supervisor, comment: comment, date: Date())
+                let myZoneDetails = UserZoneDetails(username: username, selectedZone: zoneName, manPower: manPower, equipment: equipment, supervisorName: supervisor, comment: comment, date: "\(Date())")
                 sendMyZoneDetails(zoneDetails: myZoneDetails)
             } else {
                 showError(message: "error")
@@ -120,9 +120,10 @@ class ZoneDetailsViewController: UIViewController {
     
     func showAlert(withMessage message: String) {
         let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+        alertController.addAction(UIAlertAction(title: "OK", style: .default) { [weak self] _ in
             // Navigate back to the first view controller
-            if let navigationController = self.navigationController {
+            guard let self else { return }
+            if let navigationController = navigationController {
                 navigationController.popToRootViewController(animated: true)
             }
         })
