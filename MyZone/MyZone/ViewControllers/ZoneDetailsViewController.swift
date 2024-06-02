@@ -69,7 +69,7 @@ class ZoneDetailsViewController: UIViewController {
                 let equipment = equipmentTextField.text ?? ""
                 let supervisor = supervisorTextField.text ?? ""
                 let comment = commentTextField.text ?? ""
-                let myZoneDetails = UserZoneDetails(username: username, selectedZone: zoneName, manPower: manPower, equipment: equipment, supervisorName: supervisor, comment: comment, date: "\(Date())")
+                let myZoneDetails = UserZoneDetails(username: username, selectedZone: zoneName, manPower: manPower, equipment: equipment, supervisorName: supervisor, comment: comment, date: "\(Date().getDateWithoutTime())")
                 sendMyZoneDetails(zoneDetails: myZoneDetails)
             } else {
                 showError(message: "error")

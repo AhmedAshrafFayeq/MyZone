@@ -66,3 +66,13 @@ class Utilities {
     }
     
 }
+
+
+extension Date {
+    func getDateWithoutTime()-> String {
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "yyyy-MM-dd" // Set your desired date format
+           
+           return dateFormatter.string(from: self)
+       }
+}

@@ -22,7 +22,10 @@ class DashboardViewController: UIViewController {
     func fetchUsersFromFirebase() {
         let db = Firestore.firestore()
         let collectionRef = db.collection("userSelectedZones")
-        collectionRef.getDocuments { [weak self] (querySnapshot, error) in
+        
+        let today = "\(Date().getDateWithoutTime())"
+        
+        collectionRef.whereField("date", isEqualTo: today).getDocuments { [weak self] (querySnapshot, error) in
             guard let self else { return }
             if let error = error {
                 print("Error getting documents: \(error)")
