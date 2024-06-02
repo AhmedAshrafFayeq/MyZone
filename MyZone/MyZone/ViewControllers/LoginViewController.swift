@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         errorLabel.alpha = 0
         Utilities.styleTextField(usernamTextField)
         Utilities.styleTextField(passwordTextField)
+        passwordTextField.isSecureTextEntry = true
         Utilities.styleFilledButton(loginButton)
         // Add a tap gesture recognizer to dismiss keyboard
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
