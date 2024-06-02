@@ -29,15 +29,15 @@ class ZonesViewController: UIViewController {
     func fetchZonesFromFirebase() {
         let db = Firestore.firestore()
         let collectionRef = db.collection("zones")
-        collectionRef.getDocuments { [weak self] (querySnapshot, error) in
+        collectionRef.order(by: "code").getDocuments { [weak self] (querySnapshot, error) in
             guard let self else { return }
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
-                    if let name = data["name"] as? String, let code = data["code"] as? String {
-                        listOfZones.append(Zone(name: name, code: code))
+                    if let name = data["name"] as? String, let code = data["code"] as? Int {
+                        listOfZones.append(Zone(name: name, code: "\(code)"))
                     }
                 }
                 zonesTableView.reloadData()
